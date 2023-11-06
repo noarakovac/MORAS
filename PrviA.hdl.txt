@@ -1,0 +1,10 @@
+CHIP PrviA{
+
+	IN x,y;
+	OUT out;
+
+	PARTS:
+	Not(in = x, out = notx);
+	Not(in = y, out = noty);
+	Or(in = notx, in = noty, out=out);
+}
