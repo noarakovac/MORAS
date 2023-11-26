@@ -1,0 +1,52 @@
+CHIP Clzv
+{
+    IN a[16];
+    OUT out[16];
+    PARTS:
+    Mux(a=true, b=false, sel=a[15], out=p0);
+    NOR(a=a[15], b=a[14], out=out1);
+    Mux(a=true , b=false , sel=out1, out=p1);
+    NOR (a=p1 , b=a[13] , out=out2);
+    Mux(a=true , b=false , sel=out2, out=p2);
+    NOR (a=p2 , b=a[12], out=out3);
+    Mux(a=true , b=false , sel=out3, out=p3);
+    NOR (a=p3 , b=a[11], out=out4);
+    Mux(a=true , b=false , sel=out4, out=p4);
+    NOR (a=p4 , b=a[10], out=out5);
+    Mux(a=true , b=false , sel=out5, out=p5);
+    NOR (a=p5, b=a[9], out=out6);
+    Mux(a=true , b=false , sel=out6, out=p6);
+    NOR (a=p6 , b=a[8], out=out7);
+    Mux(a=true , b=false , sel=out7, out=p7);
+    NOR (a=p7 , b=a[7], out=out8);
+    Mux(a=true , b=false , sel=out8, out=p8);
+    NOR (a=p8 , b=a[6], out=out9);
+    Mux(a=true , b=false , sel=out9, out=p9);
+    NOR (a=p9 , b=a[5], out=out10);
+    Mux(a=true , b=false , sel=out10, out=p10);
+    NOR (a=p10 , b=a[4], out=out11);
+    Mux(a=true , b=false , sel=out11, out=p11);
+    NOR (a=p11 , b=a[3], out=out12);
+    Mux(a=true , b=false , sel=out12, out=p12);
+    NOR (a=p12 , b=a[2], out=out13);
+    Mux(a=true , b=false , sel=out13, out=p13);
+    NOR (a=p13 , b=a[1], out=out14);
+    Mux(a=true , b=false , sel=out14, out=p14);
+    NOR (a=p14 , b=a[0], out=out15);
+    Mux(a=true , b=false , sel=out15, out=p15);
+    Add16(a[0]=out1, a[1..15]=false, b[1..15]=false, b[0]=out2, out=res1);
+    Add16(a=res1, b[1..15]=false, b[0]=out3, out=res2);
+    Add16(a=res2, b[1..15]=false, b[0]=out4, out=res3);
+    Add16(a=res3, b[1..15]=false, b[0]=out5, out=res4);
+    Add16(a=res4, b[1..15]=false, b[0]=out6, out=res5);
+    Add16(a=res5, b[1..15]=false, b[0]=out7, out=res6);
+    Add16(a=res6, b[1..15]=false, b[0]=out8, out=res7);
+    Add16(a=res7, b[1..15]=false, b[0]=out9, out=res8);
+    Add16(a=res8, b[1..15]=false, b[0]=out10, out=res9);
+    Add16(a=res9, b[1..15]=false, b[0]=out11, out=res10);
+    Add16(a=res10, b[1..15]=false, b[0]=out12, out=res11);
+    Add16(a=res11, b[1..15]=false, b[0]=out13, out=res12);
+    Add16(a=res12, b[1..15]=false, b[0]=out14, out=res13);
+    Add16(a=res13, b[1..15]=false, b[0]=out15, out=res14);
+    Add16(a=res14, b[1..15]=false, b[0]=p0, out=out);  
+}
