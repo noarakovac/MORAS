@@ -128,11 +128,11 @@ class Parser:
                 new = newline.split("\n")
                 for line in new:
                     newlines.append((line, i, o))
-                    i += 1
+                    i +=1
             elif (self._flag == False):
                 break
             elif (len(newline) > 0):
                 newlines.append((newline, i, o))
-                i += 1
+                i +=1
         self._lines = newlines
 
