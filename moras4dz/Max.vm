@@ -1,0 +1,25 @@
+function Max.max 1
+	push argument 0 // mx = a
+	pop local 0
+
+	push local 0
+	push argument 1
+	gt // b < mx
+	if-goto bLessThanA
+
+	push argument 1
+	pop local 0 // mx = b
+
+label bLessThanA
+	
+	push local 0
+	push argument 2
+	gt // c < mx
+	if-goto maxEnd
+
+	push argument 2
+	pop local 0
+
+label maxEnd
+	push local 0
+	return
