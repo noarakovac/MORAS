@@ -240,7 +240,6 @@ class Compiler:
         self._expectSymbol('}')
         self._writeXML(SYMBOL, self._tokenizer.symbol())
         self._nextToken()
-
         self._writeXMLTag('</subroutineBody>\n')
 
     def _compileVarDec(self):
@@ -308,7 +307,6 @@ class Compiler:
                 self._compileDo()
             elif self._tokenizer.keyword() == KW_RETURN:
                 self._compileReturn()
-
         self._writeXMLTag('</statements>\n')
 
     def _compileLet(self):
@@ -360,13 +358,10 @@ class Compiler:
         """
         
         self._writeXMLTag('<doStatement>\n')
-
         self._expectKeyword(KW_DO)
         self._writeXML(KEYWORD, self._tokenizer.keywordStr())
         self._nextToken()
-
         self._compileCall()
-
         self._expectSymbol(';')
         self._writeXML(SYMBOL, self._tokenizer.symbol())
         self._nextToken()
