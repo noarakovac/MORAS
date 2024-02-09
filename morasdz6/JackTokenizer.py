@@ -257,7 +257,6 @@ class Tokenizer:
             else:
                 break
         return ret
-
     # Znamo da je token string pa ga parsiramo.
     def _parseString(self):
         ret = ""
@@ -273,7 +272,6 @@ class Tokenizer:
         raise JackError('Sytax error in line ' + str(self._lineNum) + ': open string constant.')
 
     # Get metode - koristimo ih izvan klase.
-
     # Vraca broj trenutne linije.
     def lineNum(self):
         return self._lineNum
